@@ -1,15 +1,15 @@
 env:
-  TERM: alacritty
+  TERM: xterm-256color
 
 selection:
   save_to_clipboard: true
   text: CellBackground
 
 window:
-  opacity: 1.0
+  opacity: 0.9
   dimensions:
     columns: 110
-    lines: 52
+    lines: 27
   padding:
     x: 4
     y: 0
@@ -29,13 +29,13 @@ mouse:
 
 font:
   normal:
-    family: SFMono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Regular
   bold:
-    family: SFMono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold
   italic:
-    family: SFMono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Italic
   size: 18.0
   offset:
@@ -47,41 +47,7 @@ font:
 
 draw_bold_text_with_bright_colors: false
 
-# TokyoNight Alacritty Colors
 colors:
-  # Default colors
-  # primary:
-  #   background: "0x24283b"
-  #   foreground: "0xc0caf5"
-
-  # Normal colors
-  normal:
-    black: "0x1D202F"
-    red: "0xf7768e"
-    green: "0x9ece6a"
-    yellow: "0xe0af68"
-    blue: "0x7aa2f7"
-    magenta: "0xbb9af7"
-    cyan: "0x7dcfff"
-    white: "0xa9b1d6"
-
-  # Bright colors
-  bright:
-    black: "0x414868"
-    red: "0xf7768e"
-    green: "0x9ece6a"
-    yellow: "0xe0af68"
-    blue: "0x7aa2f7"
-    magenta: "0xbb9af7"
-    cyan: "0x7dcfff"
-    white: "0xc0caf5"
-
-  indexed_colors:
-    - { index: 16, color: "0xff9e64" }
-    - { index: 17, color: "0xdb4b4b" }
-
-cursor:
-  style:
-    shape: Block
-  vi_mode_style:
-    shape: Beam
+  primary:
+    background: "0x000000"
+    foreground: "0xe0def4"

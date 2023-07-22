@@ -1,6 +1,7 @@
 # Inital 
 exec_always --no-startup-id "setxkbmap -option ctrl:nocaps"
-exec_always --no-startup-id "setxkbmap -model pc105 -layout us,ru -variant qwerty -option grp:win_space_toggle"
+exec_always --no-startup-id "setxkbmap -model pc105 -layout us,ru -variant qwerty -option grp:alt_shift_toggle"
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
@@ -14,10 +15,10 @@ smart_gaps on
 set $mod Mod4
 
 #TURN OFF TITLES 
-default_border pixel 1
+default_border pixel 0
 default_floating_border pixel 1
 
-font pango:JetBrainsMono Nerd Font 18
+font pango:JetBrainsMono Nerd Font 16
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -31,7 +32,10 @@ floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+# tiling_drag modifier titlebar
+
+# screenshot
+bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -39,8 +43,8 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+# start rofi (a program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -95,37 +99,27 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+# bindsym $mod+d focus child
 
-#windows rules
-assign [class="TelegramDesktop"] $ws5
+# windows rules
+assign [class="TelegramDesktop"] $ws4
 assign [class="chrome"] $ws1
-assign [class="min"] $ws2
-assign [class="Chromium"] $ws1
-assign [class="yandex_browser"] $ws1
-assign [class="qBittorrent"] $ws7
+assign [class="qBittorrent"] $ws6
 
-set $ws1 "1: Web  "
-set $ws2 "2: Code  "
-set $ws3 "3: Term  "
-set $ws4 "4: Telegram  "
-set $ws5 "5: Files  "
-set $ws6 "6: any  "
-set $ws7 "7: any  "
-set $ws8 "8: Torrent 󰨈 "
-set $ws9 "9: Windows 󰨡"  
-set $ws10 "10: Music  "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"  
+set $ws10 "10"
 
-# set $ws1 "1"
-# set $ws2 "2"
-# set $ws3 "3"
-# set $ws4 "4"
-# set $ws5 "5"
-# set $ws6 "6"
-# set $ws7 "7"
-# set $ws8 "8"
-# set $ws9 "9"
-# set $ws10 "10"
+# floating windows rules
+for_window [class="org.gnome.Nautilus"] floating enable, move position center
+# for_window [class="Alacritty"] floating enable, move position center
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -190,3 +184,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# Suspend
+bindsym $mod+Shift+period exec systemctl suspend
