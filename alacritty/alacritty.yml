@@ -6,13 +6,13 @@ selection:
   text: CellBackground
 
 window:
-  opacity: 0.9
+  opacity: 0.85
   dimensions:
     columns: 110
     lines: 27
   padding:
-    x: 4
-    y: 0
+    x: 1
+    y: 1
   decorations: none
   startup_mode: Windowed
   dynamic_title: true
@@ -51,3 +51,11 @@ colors:
   primary:
     background: "0x000000"
     foreground: "0xe0def4"
+  cursor:
+    text: "0x1d71a3"
+    cursor: "0xcccccc"
+
+cursor:
+  style:
+    blinking: Always
+  blink_interval: 600

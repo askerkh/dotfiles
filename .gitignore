@@ -1,6 +1,12 @@
 *
+!.gitmodules
+!.gitignore
 !alacritty
 !i3
 !i3status
 !nvim
-!.gitmodules
+!rofi
+!picom
+!pavucontrol.ini
+!tmux
+!zsh
