@@ -18,7 +18,7 @@ set $mod Mod4
 default_border pixel 0
 default_floating_border pixel 1
 
-font pango:JetBrainsMono Nerd Font 16
+font pango:SFMono 16
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

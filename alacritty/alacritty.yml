@@ -29,13 +29,13 @@ mouse:
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font
+    family: SFMono
     style: Regular
   bold:
-    family: JetBrainsMono Nerd Font
+    family: SFMono
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font
+    family: SFMono
     style: Italic
   size: 18.0
   offset:
