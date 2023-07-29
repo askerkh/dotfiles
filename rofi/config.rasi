@@ -2,7 +2,7 @@ configuration {
   display-drun: "";
   display-window: "Windows:";
   drun-display-format: "{name}";
-  font: "JetBrainsMono Nerd Font Medium 14";
+  font: "SFMono Medium 14";
   modi: "window,run,drun";
 }
 
